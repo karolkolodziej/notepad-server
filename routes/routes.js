@@ -15,8 +15,13 @@ router.get("/", async (req, res) => {
 //Save note
 router.post("/", async (req, res) => {
   const note = new Note({
-    content: req.body.content,
-    id: req.body.id
+    name: req.body.name,
+    price: req.body.price,
+    location: req.body.location,
+    rating: req.body.rating,
+    description: req.body.description,
+    image: req.body.image,
+    owner: req.body.owner
   });
   try {
     const savedNote = await note.save();

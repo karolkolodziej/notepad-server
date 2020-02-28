@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 
 //Import routes
 const noteRoutes = require("./routes/routes");
-app.use("/api/notes", noteRoutes);
+app.use("/api/rooms", noteRoutes);
 
 //Conect to DB
 
@@ -27,7 +27,7 @@ mongoose.connect(
     useNewUrlParser: true,
     useUnifiedTopology: true
   },
-  () => console.log("conected to db")
+  () => console.log("conected to MongoDB")
 );
 
 if (process.env.NODE_ENV === "production") {
